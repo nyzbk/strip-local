@@ -1,0 +1,11 @@
+node_modules
+.vercel
+dist
+.output
+*.log
+screenshots
+.DS_Store
+artifacts
+.grok
+AGENTS.md
+AGENTS.project.md
