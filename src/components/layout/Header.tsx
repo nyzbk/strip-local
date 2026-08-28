@@ -10,18 +10,33 @@ function StripMark() {
   );
 }
 
+const LINKS = [
+  { to: "/how-to", label: "How to" },
+  { to: "/faq", label: "FAQ" },
+  { to: "/use-cases", label: "Use cases" },
+  { to: "/contact", label: "Contact" },
+] as const;
+
 export function Header() {
   return (
     <header className="border-b border-line bg-paper/80 backdrop-blur">
-      <div className="mx-auto flex max-w-5xl items-center justify-between gap-3 px-4 py-3">
+      <div className="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-x-3 gap-y-2 px-4 py-3">
         <Link to="/" className="flex min-h-11 items-center gap-2">
           <StripMark />
           <span className="font-display text-lg tracking-tight">Strip</span>
           <span className="hidden text-sm text-muted sm:inline">Free EXIF / Metadata Remover</span>
         </Link>
-        <p className="max-w-[46%] text-right text-xs uppercase tracking-wider text-muted">
-          No upload. No signup. No watermark.
-        </p>
+        <nav aria-label="Primary" className="flex flex-wrap items-center gap-x-3 gap-y-1">
+          {LINKS.map((item) => (
+            <Link
+              key={item.to}
+              to={item.to}
+              className="inline-flex min-h-11 items-center text-sm text-muted hover:text-ink"
+            >
+              {item.label}
+            </Link>
+          ))}
+        </nav>
       </div>
     </header>
   );

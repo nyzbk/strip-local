@@ -66,7 +66,21 @@ async function main() {
     }
   });
 
-  for (const path of ["/", "/privacy", "/terms", "/about", "/ads.txt", "/robots.txt", "/sitemap.xml"]) {
+  for (const path of [
+    "/",
+    "/how-to",
+    "/faq",
+    "/use-cases",
+    "/exif-gps",
+    "/why-local",
+    "/contact",
+    "/privacy",
+    "/terms",
+    "/about",
+    "/ads.txt",
+    "/robots.txt",
+    "/sitemap.xml",
+  ]) {
     const res = await page.goto(BASE + path, { waitUntil: "domcontentloaded" });
     if (!res || res.status() >= 400) throw new Error(`${path} → ${res?.status()}`);
   }

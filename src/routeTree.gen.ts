@@ -11,9 +11,15 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as ExifGpsRouteImport } from './routes/exif-gps'
+import { Route as FaqRouteImport } from './routes/faq'
+import { Route as HowToRouteImport } from './routes/how-to'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as TermsRouteImport } from './routes/terms'
+import { Route as UseCasesRouteImport } from './routes/use-cases'
+import { Route as WhyLocalRouteImport } from './routes/why-local'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -23,6 +29,26 @@ const IndexRoute = IndexRouteImport.update({
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ExifGpsRoute = ExifGpsRouteImport.update({
+  id: '/exif-gps',
+  path: '/exif-gps',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FaqRoute = FaqRouteImport.update({
+  id: '/faq',
+  path: '/faq',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HowToRoute = HowToRouteImport.update({
+  id: '/how-to',
+  path: '/how-to',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PrivacyRoute = PrivacyRouteImport.update({
@@ -40,43 +66,111 @@ const TermsRoute = TermsRouteImport.update({
   path: '/terms',
   getParentRoute: () => rootRouteImport,
 } as any)
+const UseCasesRoute = UseCasesRouteImport.update({
+  id: '/use-cases',
+  path: '/use-cases',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WhyLocalRoute = WhyLocalRouteImport.update({
+  id: '/why-local',
+  path: '/why-local',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/exif-gps': typeof ExifGpsRoute
+  '/faq': typeof FaqRoute
+  '/how-to': typeof HowToRoute
   '/privacy': typeof PrivacyRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
+  '/use-cases': typeof UseCasesRoute
+  '/why-local': typeof WhyLocalRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/exif-gps': typeof ExifGpsRoute
+  '/faq': typeof FaqRoute
+  '/how-to': typeof HowToRoute
   '/privacy': typeof PrivacyRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
+  '/use-cases': typeof UseCasesRoute
+  '/why-local': typeof WhyLocalRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/exif-gps': typeof ExifGpsRoute
+  '/faq': typeof FaqRoute
+  '/how-to': typeof HowToRoute
   '/privacy': typeof PrivacyRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
+  '/use-cases': typeof UseCasesRoute
+  '/why-local': typeof WhyLocalRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/privacy' | '/sitemap.xml' | '/terms'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/exif-gps'
+    | '/faq'
+    | '/how-to'
+    | '/privacy'
+    | '/sitemap.xml'
+    | '/terms'
+    | '/use-cases'
+    | '/why-local'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/privacy' | '/sitemap.xml' | '/terms'
-  id: '__root__' | '/' | '/about' | '/privacy' | '/sitemap.xml' | '/terms'
+  to:
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/exif-gps'
+    | '/faq'
+    | '/how-to'
+    | '/privacy'
+    | '/sitemap.xml'
+    | '/terms'
+    | '/use-cases'
+    | '/why-local'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/exif-gps'
+    | '/faq'
+    | '/how-to'
+    | '/privacy'
+    | '/sitemap.xml'
+    | '/terms'
+    | '/use-cases'
+    | '/why-local'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  ContactRoute: typeof ContactRoute
+  ExifGpsRoute: typeof ExifGpsRoute
+  FaqRoute: typeof FaqRoute
+  HowToRoute: typeof HowToRoute
   PrivacyRoute: typeof PrivacyRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   TermsRoute: typeof TermsRoute
+  UseCasesRoute: typeof UseCasesRoute
+  WhyLocalRoute: typeof WhyLocalRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -93,6 +187,34 @@ declare module '@tanstack/react-router' {
       path: '/about'
       fullPath: '/about'
       preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/exif-gps': {
+      id: '/exif-gps'
+      path: '/exif-gps'
+      fullPath: '/exif-gps'
+      preLoaderRoute: typeof ExifGpsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/faq': {
+      id: '/faq'
+      path: '/faq'
+      fullPath: '/faq'
+      preLoaderRoute: typeof FaqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/how-to': {
+      id: '/how-to'
+      path: '/how-to'
+      fullPath: '/how-to'
+      preLoaderRoute: typeof HowToRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/privacy': {
@@ -116,15 +238,35 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TermsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/use-cases': {
+      id: '/use-cases'
+      path: '/use-cases'
+      fullPath: '/use-cases'
+      preLoaderRoute: typeof UseCasesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/why-local': {
+      id: '/why-local'
+      path: '/why-local'
+      fullPath: '/why-local'
+      preLoaderRoute: typeof WhyLocalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  ContactRoute: ContactRoute,
+  ExifGpsRoute: ExifGpsRoute,
+  FaqRoute: FaqRoute,
+  HowToRoute: HowToRoute,
   PrivacyRoute: PrivacyRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   TermsRoute: TermsRoute,
+  UseCasesRoute: UseCasesRoute,
+  WhyLocalRoute: WhyLocalRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
