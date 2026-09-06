@@ -20,7 +20,7 @@ function UseCasesPage() {
       <Article
         title="When stripping GPS is the actual job"
         lede="These are situations where a compressor or a format converter does not help. The file looks fine. The tag sheet does not."
-        updated="Updated 28 August 2026"
+        updated="Updated 6 September 2026"
       >
         <h2>Posting travel and daily photos without handing out a pin</h2>
         <p>
@@ -48,7 +48,9 @@ function UseCasesPage() {
           are the worst offenders: they often send the file on disk, not the recompressed preview you saw in a
           mobile share sheet. If you post the same trip set to a public Flickr-style original download, treat every
           still as hostile until inspect is empty. Related:{" "}
-          <Link to="/how-to">how-to</Link> and{" "}
+          <Link to="/how-to">how-to</Link>,{" "}
+          <Link to="/iphone">iPhone album vs download</Link>,{" "}
+          <Link to="/whatsapp">WhatsApp bubble vs disk</Link>, and{" "}
           <Link to="/exif-gps">what the GPS block contains</Link>.
         </p>
 
@@ -79,6 +81,12 @@ function UseCasesPage() {
           the batch once and ZIP; do not upload “just this one extra original” from Camera Roll because you were
           in a hurry. Marketplace apps also store drafts — replace the draft image with the cleaned file, don’t
           append.
+        </p>
+        <p>
+          A clean public thumbnail is often the marketplace’s recode, not your disk file. That ceiling — CDN versus
+          Camera Roll, drafts, and buyer chat — is{" "}
+          <Link to="/marketplace">marketplace: listing CDN vs disk</Link>. House numbers stay in the pixels either
+          way.
         </p>
 
         <h2>Field notes, journalism, and research photos</h2>

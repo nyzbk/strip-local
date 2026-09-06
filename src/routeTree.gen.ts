@@ -15,10 +15,13 @@ import { Route as ContactRouteImport } from './routes/contact'
 import { Route as ExifGpsRouteImport } from './routes/exif-gps'
 import { Route as FaqRouteImport } from './routes/faq'
 import { Route as HowToRouteImport } from './routes/how-to'
+import { Route as IphoneRouteImport } from './routes/iphone'
+import { Route as MarketplaceRouteImport } from './routes/marketplace'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as UseCasesRouteImport } from './routes/use-cases'
+import { Route as WhatsappRouteImport } from './routes/whatsapp'
 import { Route as WhyLocalRouteImport } from './routes/why-local'
 
 const IndexRoute = IndexRouteImport.update({
@@ -51,6 +54,16 @@ const HowToRoute = HowToRouteImport.update({
   path: '/how-to',
   getParentRoute: () => rootRouteImport,
 } as any)
+const IphoneRoute = IphoneRouteImport.update({
+  id: '/iphone',
+  path: '/iphone',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MarketplaceRoute = MarketplaceRouteImport.update({
+  id: '/marketplace',
+  path: '/marketplace',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PrivacyRoute = PrivacyRouteImport.update({
   id: '/privacy',
   path: '/privacy',
@@ -71,6 +84,11 @@ const UseCasesRoute = UseCasesRouteImport.update({
   path: '/use-cases',
   getParentRoute: () => rootRouteImport,
 } as any)
+const WhatsappRoute = WhatsappRouteImport.update({
+  id: '/whatsapp',
+  path: '/whatsapp',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const WhyLocalRoute = WhyLocalRouteImport.update({
   id: '/why-local',
   path: '/why-local',
@@ -84,10 +102,13 @@ export interface FileRoutesByFullPath {
   '/exif-gps': typeof ExifGpsRoute
   '/faq': typeof FaqRoute
   '/how-to': typeof HowToRoute
+  '/iphone': typeof IphoneRoute
+  '/marketplace': typeof MarketplaceRoute
   '/privacy': typeof PrivacyRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
   '/use-cases': typeof UseCasesRoute
+  '/whatsapp': typeof WhatsappRoute
   '/why-local': typeof WhyLocalRoute
 }
 export interface FileRoutesByTo {
@@ -97,10 +118,13 @@ export interface FileRoutesByTo {
   '/exif-gps': typeof ExifGpsRoute
   '/faq': typeof FaqRoute
   '/how-to': typeof HowToRoute
+  '/iphone': typeof IphoneRoute
+  '/marketplace': typeof MarketplaceRoute
   '/privacy': typeof PrivacyRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
   '/use-cases': typeof UseCasesRoute
+  '/whatsapp': typeof WhatsappRoute
   '/why-local': typeof WhyLocalRoute
 }
 export interface FileRoutesById {
@@ -111,10 +135,13 @@ export interface FileRoutesById {
   '/exif-gps': typeof ExifGpsRoute
   '/faq': typeof FaqRoute
   '/how-to': typeof HowToRoute
+  '/iphone': typeof IphoneRoute
+  '/marketplace': typeof MarketplaceRoute
   '/privacy': typeof PrivacyRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
   '/use-cases': typeof UseCasesRoute
+  '/whatsapp': typeof WhatsappRoute
   '/why-local': typeof WhyLocalRoute
 }
 export interface FileRouteTypes {
@@ -126,10 +153,13 @@ export interface FileRouteTypes {
     | '/exif-gps'
     | '/faq'
     | '/how-to'
+    | '/iphone'
+    | '/marketplace'
     | '/privacy'
     | '/sitemap.xml'
     | '/terms'
     | '/use-cases'
+    | '/whatsapp'
     | '/why-local'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -139,10 +169,13 @@ export interface FileRouteTypes {
     | '/exif-gps'
     | '/faq'
     | '/how-to'
+    | '/iphone'
+    | '/marketplace'
     | '/privacy'
     | '/sitemap.xml'
     | '/terms'
     | '/use-cases'
+    | '/whatsapp'
     | '/why-local'
   id:
     | '__root__'
@@ -152,10 +185,13 @@ export interface FileRouteTypes {
     | '/exif-gps'
     | '/faq'
     | '/how-to'
+    | '/iphone'
+    | '/marketplace'
     | '/privacy'
     | '/sitemap.xml'
     | '/terms'
     | '/use-cases'
+    | '/whatsapp'
     | '/why-local'
   fileRoutesById: FileRoutesById
 }
@@ -166,10 +202,13 @@ export interface RootRouteChildren {
   ExifGpsRoute: typeof ExifGpsRoute
   FaqRoute: typeof FaqRoute
   HowToRoute: typeof HowToRoute
+  IphoneRoute: typeof IphoneRoute
+  MarketplaceRoute: typeof MarketplaceRoute
   PrivacyRoute: typeof PrivacyRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   TermsRoute: typeof TermsRoute
   UseCasesRoute: typeof UseCasesRoute
+  WhatsappRoute: typeof WhatsappRoute
   WhyLocalRoute: typeof WhyLocalRoute
 }
 
@@ -217,6 +256,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof HowToRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/iphone': {
+      id: '/iphone'
+      path: '/iphone'
+      fullPath: '/iphone'
+      preLoaderRoute: typeof IphoneRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/marketplace': {
+      id: '/marketplace'
+      path: '/marketplace'
+      fullPath: '/marketplace'
+      preLoaderRoute: typeof MarketplaceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/privacy': {
       id: '/privacy'
       path: '/privacy'
@@ -245,6 +298,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof UseCasesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/whatsapp': {
+      id: '/whatsapp'
+      path: '/whatsapp'
+      fullPath: '/whatsapp'
+      preLoaderRoute: typeof WhatsappRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/why-local': {
       id: '/why-local'
       path: '/why-local'
@@ -262,10 +322,13 @@ const rootRouteChildren: RootRouteChildren = {
   ExifGpsRoute: ExifGpsRoute,
   FaqRoute: FaqRoute,
   HowToRoute: HowToRoute,
+  IphoneRoute: IphoneRoute,
+  MarketplaceRoute: MarketplaceRoute,
   PrivacyRoute: PrivacyRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   TermsRoute: TermsRoute,
   UseCasesRoute: UseCasesRoute,
+  WhatsappRoute: WhatsappRoute,
   WhyLocalRoute: WhyLocalRoute,
 }
 export const routeTree = rootRouteImport

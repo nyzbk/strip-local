@@ -24,9 +24,21 @@ export function HowItWorks() {
     <section className="mx-auto max-w-3xl px-4 py-10">
       <h2 className="font-display text-2xl">How it works</h2>
       <p className="mt-3 max-w-2xl text-pretty text-sm text-muted">
-        Four steps, all on-device. For a longer walkthrough with failure cases, see the{" "}
+        Four steps, all on-device. Longer walkthrough: the{" "}
         <Link to="/how-to" className="text-copper-deep underline">
           how-to guide
+        </Link>
+        . Device ceilings:{" "}
+        <Link to="/iphone" className="text-copper-deep underline">
+          iPhone
+        </Link>
+        ,{" "}
+        <Link to="/whatsapp" className="text-copper-deep underline">
+          WhatsApp
+        </Link>
+        ,{" "}
+        <Link to="/marketplace" className="text-copper-deep underline">
+          marketplace
         </Link>
         .
       </p>

@@ -88,6 +88,18 @@ function Home() {
               step-by-step how-to
             </Link>
             ,{" "}
+            <Link to="/iphone" className="text-copper-deep underline">
+              iPhone album vs download
+            </Link>
+            ,{" "}
+            <Link to="/whatsapp" className="text-copper-deep underline">
+              WhatsApp bubble vs disk
+            </Link>
+            ,{" "}
+            <Link to="/marketplace" className="text-copper-deep underline">
+              marketplace CDN vs disk
+            </Link>
+            ,{" "}
             <Link to="/use-cases" className="text-copper-deep underline">
               use cases
             </Link>

@@ -8,6 +8,9 @@ export const SITE = {
 export const NAV = [
   { to: "/", label: "Tool" },
   { to: "/how-to", label: "How to" },
+  { to: "/iphone", label: "iPhone" },
+  { to: "/whatsapp", label: "WhatsApp" },
+  { to: "/marketplace", label: "Marketplace" },
   { to: "/faq", label: "FAQ" },
   { to: "/use-cases", label: "Use cases" },
   { to: "/exif-gps", label: "What GPS leaks" },

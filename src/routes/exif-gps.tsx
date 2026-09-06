@@ -62,7 +62,10 @@ function ExifGpsPage() {
         <p>
           MakerNotes are vendor-specific. Steganography is out of scope. PDF, video, and RAW/DNG are other
           containers — Strip is a still-image utility. We would rather list those limits than advertise a
-          “military wipe.” Empty GPS on re-inspect is the success criterion.
+          “military wipe.” Empty GPS on re-inspect is the success criterion. Related ceilings:{" "}
+          <Link to="/iphone">iPhone album</Link>,{" "}
+          <Link to="/whatsapp">WhatsApp bubble</Link>,{" "}
+          <Link to="/marketplace">marketplace CDN</Link>.
         </p>
       </Article>
       <SoftAgencyCta />

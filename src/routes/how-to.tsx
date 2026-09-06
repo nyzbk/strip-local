@@ -20,7 +20,7 @@ function HowToPage() {
       <Article
         title="How to strip GPS and EXIF from a photo"
         lede="A practical sequence for JPEG, PNG and WebP on a phone or laptop. Every step runs in this tab. If a step fails, skip to the matching error note rather than uploading the file somewhere else."
-        updated="Updated 28 August 2026"
+        updated="Updated 6 September 2026"
       >
         <h2>1. Decide whether the file even has a privacy problem</h2>
         <p>
@@ -96,6 +96,9 @@ function HowToPage() {
           It will not walk you through blurring a house, scrubbing a license plate, or claiming a courtroom-grade
           wipe. Those are other jobs. Strip’s how-to ends when the GPS IFD is empty and you hold a file you are
           willing to attach. Related reading:{" "}
+          <Link to="/iphone">iPhone album vs download</Link>,{" "}
+          <Link to="/whatsapp">WhatsApp bubble vs disk</Link>,{" "}
+          <Link to="/marketplace">marketplace CDN vs disk</Link>,{" "}
           <Link to="/use-cases">use cases</Link>,{" "}
           <Link to="/why-local">why local</Link>,{" "}
           <Link to="/exif-gps">what the GPS block contains</Link>.

@@ -1,8 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
 
+const LASTMOD = "2026-09-06";
+
 const PATHS = [
   "/",
   "/how-to",
+  "/iphone",
+  "/whatsapp",
+  "/marketplace",
   "/faq",
   "/use-cases",
   "/exif-gps",
@@ -23,6 +28,7 @@ export const Route = createFileRoute("/sitemap.xml")({
 ${PATHS.map(
   (path) => `  <url>
     <loc>${origin}${path === "/" ? "" : path}</loc>
+    <lastmod>${LASTMOD}</lastmod>
     <changefreq>weekly</changefreq>
   </url>`,
 ).join("\n")}

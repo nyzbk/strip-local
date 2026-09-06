@@ -10,7 +10,7 @@ export const Route = createFileRoute("/faq")({
   head: () =>
     pageHead(
       "EXIF & GPS Stripper FAQ — Upload, Fast vs Deep, iPhone | Strip",
-      "Answers about local EXIF removal: no upload, Fast JPEG vs Deep Canvas, HEIC, ZIP privacy, verification, and what Strip does not claim.",
+      "Answers about local EXIF removal: no upload, Fast JPEG vs Deep Canvas, HEIC, iPhone album vs download, WhatsApp bubble vs disk, marketplace CDN vs disk.",
       "/faq",
     ),
   component: FaqPage,
