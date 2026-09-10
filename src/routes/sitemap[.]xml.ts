@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-const LASTMOD = "2026-09-06";
+const LASTMOD = "2026-09-10";
 
 const PATHS = [
   "/",
