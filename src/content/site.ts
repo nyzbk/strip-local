@@ -3,7 +3,14 @@ export const SITE = {
   origin: "https://strip-local.vercel.app",
   email: "ultaultimatum@gmail.com",
   publisher: "Ultimatum",
+  hub: "https://ultimatum-hub.vercel.app/",
+  lastmod: "2026-09-11",
 } as const;
+
+export function absUrl(path: string): string {
+  if (!path || path === "/") return `${SITE.origin}/`;
+  return `${SITE.origin}${path.startsWith("/") ? path : `/${path}`}`;
+}
 
 export const NAV = [
   { to: "/", label: "Tool" },

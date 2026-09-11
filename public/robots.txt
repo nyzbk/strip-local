@@ -38,3 +38,5 @@ User-agent: PerplexityBot
 Allow: /
 
 Sitemap: https://strip-local.vercel.app/sitemap.xml
+# AEO: https://strip-local.vercel.app/llms.txt
+# AEO: https://strip-local.vercel.app/llms-full.txt

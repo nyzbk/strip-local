@@ -4,18 +4,7 @@ import { Article } from "@/components/site/Article";
 import { FaqSection } from "@/components/site/FaqSection";
 import { SoftAgencyCta } from "@/components/ads/SoftAgencyCta";
 import { iphoneFaq } from "@/content/faq";
-import { BreadcrumbJsonLd, FaqJsonLdItems, HowToJsonLd } from "@/lib/seo";
 import { pageHead } from "@/lib/page-head";
-
-export const Route = createFileRoute("/iphone")({
-  head: () =>
-    pageHead(
-      "iPhone Photos Still Have GPS After You “Clean” Them | Strip",
-      "Strip cleans the JPEG you download. iCloud, Camera Roll, Shared Albums and Live Photo video stay dirty. Verify the saved file, then attach that file.",
-      "/iphone",
-    ),
-  component: IphonePage,
-});
 
 const STEPS = [
   {
@@ -44,21 +33,25 @@ const STEPS = [
   },
 ];
 
+export const Route = createFileRoute("/iphone")({
+  head: () =>
+    pageHead(
+      "iPhone Photos Still Have GPS After You “Clean” Them | Strip",
+      "Strip cleans the JPEG you download. iCloud, Camera Roll, Shared Albums and Live Photo video stay dirty. Verify the saved file, then attach that file.",
+      "/iphone",
+      {
+        appName: "iPhone",
+        faqs: iphoneFaq,
+        howToName: "Clean GPS from an iPhone photo without touching iCloud",
+        howToSteps: STEPS.map((s) => `${s.name}. ${s.text}`),
+      },
+    ),
+  component: IphonePage,
+});
+
 function IphonePage() {
   return (
     <AppShell>
-      <BreadcrumbJsonLd
-        items={[
-          { name: "Strip", path: "/" },
-          { name: "iPhone", path: "/iphone" },
-        ]}
-      />
-      <HowToJsonLd
-        name="Clean GPS from an iPhone photo without touching iCloud"
-        description="Strip writes a new JPEG in this tab. Camera Roll and iCloud keep the original until you delete it in Photos."
-        steps={STEPS}
-      />
-      <FaqJsonLdItems items={iphoneFaq} />
       <Article
         title="iPhone: Strip cleans the download, not the album"
         lede="The ceiling on iPhone is not Safari’s blob dialog. It is this: Camera Roll, iCloud Photos, Shared Albums and the Live Photo movie are other objects. Strip never reaches them. If you keep sending the album original, the pin is still in the file."

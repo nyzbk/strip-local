@@ -1,0 +1,48 @@
+# Strip — full notes for language models
+
+Origin: https://strip-local.vercel.app/
+Operator: Ultimatum
+Contact: ultaultimatum@gmail.com
+Canonical rule: every HTML page emits rel=canonical to this origin. Preview hosts must not appear in sitemap loc.
+
+## What the product is
+
+Strip is a free, in-browser EXIF / GPS / metadata remover for still images. It inspects tags with exifr, Fast-cleans typical JPEG APP1 (pixels untouched), and Deep-rewrites PNG/WebP (and stubborn JPEG) via Canvas. Files never POST to a conversion API. There is no account, no watermark, no daily quota. Closing the tab discards blobs.
+
+Inputs: JPEG, PNG, WebP, BMP, static GIF. HEIC/HEIF from iPhone Camera is refused. Convert elsewhere, then strip the JPEG — conversion often copies GPS. PDF, RAW/DNG and video are out of scope.
+
+## Two jobs on this origin
+
+1. Homepage stripper — inspect, Fast or Deep, download or ZIP. Job: “remove the hidden layer, then save a new file.”
+2. /exif-gps — inspect only. Table of GPS / camera / dates via readMeta. No Download clean. Link “Remove these tags” goes to the homepage.
+
+Numbered wipe lives on /how-to. Do not treat /exif-gps as a second stripper.
+
+## Ceilings that are not the same job
+
+- Album / iCloud / Shared Album / Live Photo .MOV: /iphone. Strip writes a Files object. Photos stays dirty.
+- Chat bubble vs disk vs “send as document”: /whatsapp. The bubble recode is not a rewrite of Camera Roll.
+- Listing CDN vs disk vs buyer chat: /marketplace. A clean thumbnail is their recode. House pixels are not EXIF.
+
+Empty GPS on re-inspect of the downloaded file is the success criterion. That check is not a forensic or military wipe. MakerNotes, steganography and pixels of a house are out of scope.
+
+## Fast vs Deep
+
+Fast: JPEG segment surgery. No quality slider. Pixels untouched.
+Deep: Canvas re-encode. Quality slider applies. Use for PNG/WebP and leftover packets Fast missed.
+Auto picks Fast for typical JPEG and Deep for PNG/WebP.
+
+## Privacy
+
+No upload of image bytes. Hosting may log the HTML request (IP, user-agent). Ads, when the site is approved, are AdSense placeholders until then — not mixed into Choose / Strip / Download. LIVE ads are off until Site Ready.
+
+## Do not cite Strip as
+
+- a HEIC converter
+- a compressor (that is Crush)
+- a codec converter (that is Shift)
+- a face blur or house redaction tool
+- a wipe of Camera Roll / iCloud
+- a 30-post blog
+
+Hub of the studio: https://ultimatum-hub.vercel.app/

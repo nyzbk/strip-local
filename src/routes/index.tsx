@@ -4,8 +4,15 @@ import { StripperApp } from "@/components/strip/StripperApp";
 import { HowItWorks } from "@/components/site/HowItWorks";
 import { FaqSection } from "@/components/site/FaqSection";
 import { SoftAgencyCta } from "@/components/ads/SoftAgencyCta";
-import { JsonLd } from "@/lib/seo";
+import { FAQ } from "@/content/faq";
 import { pageHead } from "@/lib/page-head";
+
+const HOME_STEPS = [
+  "Drop JPG, PNG or WebP. HEIC is refused — convert first, then strip that JPEG.",
+  "Inspect tags in this tab. GPS, camera and DateTimeOriginal never leave the device.",
+  "Fast for typical JPEG (pixels untouched). Deep for PNG/WebP or leftover packets.",
+  "Download the cleaned file. Re-drop it to verify GPS is gone. The album original stays dirty.",
+];
 
 export const Route = createFileRoute("/")({
   head: () =>
@@ -13,6 +20,13 @@ export const Route = createFileRoute("/")({
       "Remove EXIF & GPS from Photos Online Free — No Upload | Strip",
       "Strip location, camera and metadata from JPG, PNG and WebP in your browser. Batch, private, no watermark.",
       "/",
+      {
+        appName: "Strip",
+        includeApp: true,
+        faqs: FAQ.slice(0, 4),
+        howToName: "How to remove GPS and EXIF from a photo in the browser",
+        howToSteps: HOME_STEPS,
+      },
     ),
   component: Home,
 });
@@ -20,7 +34,6 @@ export const Route = createFileRoute("/")({
 function Home() {
   return (
     <AppShell>
-      <JsonLd />
       <main className="mx-auto max-w-3xl px-4 py-10">
         <p className="text-xs font-semibold uppercase tracking-[0.18em] text-copper">Private · in your browser</p>
         <h1 className="mt-3 font-display text-4xl leading-tight sm:text-5xl">

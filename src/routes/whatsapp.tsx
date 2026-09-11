@@ -4,18 +4,7 @@ import { Article } from "@/components/site/Article";
 import { FaqSection } from "@/components/site/FaqSection";
 import { SoftAgencyCta } from "@/components/ads/SoftAgencyCta";
 import { whatsappFaq } from "@/content/faq";
-import { BreadcrumbJsonLd, FaqJsonLdItems, HowToJsonLd } from "@/lib/seo";
 import { pageHead } from "@/lib/page-head";
-
-export const Route = createFileRoute("/whatsapp")({
-  head: () =>
-    pageHead(
-      "WhatsApp Chat Bubble Is Not a Clean Photo File | Strip",
-      "The bubble is WhatsApp’s recode. The JPEG on disk is still the camera original. Send as document ships those bytes. Strip the download, then pick that file.",
-      "/whatsapp",
-    ),
-  component: WhatsAppPage,
-});
 
 const STEPS = [
   {
@@ -40,21 +29,25 @@ const STEPS = [
   },
 ];
 
+export const Route = createFileRoute("/whatsapp")({
+  head: () =>
+    pageHead(
+      "WhatsApp Chat Bubble Is Not a Clean Photo File | Strip",
+      "The bubble is WhatsApp’s recode. The JPEG on disk is still the camera original. Send as document ships those bytes. Strip the download, then pick that file.",
+      "/whatsapp",
+      {
+        appName: "WhatsApp",
+        faqs: whatsappFaq,
+        howToName: "Stop sending GPS through WhatsApp originals",
+        howToSteps: STEPS.map((s) => `${s.name}. ${s.text}`),
+      },
+    ),
+  component: WhatsAppPage,
+});
+
 function WhatsAppPage() {
   return (
     <AppShell>
-      <BreadcrumbJsonLd
-        items={[
-          { name: "Strip", path: "/" },
-          { name: "WhatsApp", path: "/whatsapp" },
-        ]}
-      />
-      <HowToJsonLd
-        name="Stop sending GPS through WhatsApp originals"
-        description="WhatsApp recodes the bubble. It does not rewrite Camera Roll. Strip a download, then attach that file."
-        steps={STEPS}
-      />
-      <FaqJsonLdItems items={whatsappFaq} />
       <Article
         title="WhatsApp: the bubble is not the file on disk"
         lede="Three different objects get called “the photo.” The chat bubble is WhatsApp’s recode. The JPEG in Photos is still the camera file. “Send as document” can ship those original bytes. Strip can clean a copy you download. It cannot edit the thread, and it cannot edit Camera Roll."

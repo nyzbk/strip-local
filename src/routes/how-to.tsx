@@ -10,6 +10,16 @@ export const Route = createFileRoute("/how-to")({
       "How to Remove GPS and EXIF from Photos in the Browser | Strip",
       "Step-by-step: inspect JPEG location tags, Fast vs Deep clean, iPhone HEIC, verify GPS is gone, batch ZIP. No upload.",
       "/how-to",
+      {
+        appName: "How to strip GPS and EXIF",
+        howToName: "How to strip GPS and EXIF from a photo",
+        howToSteps: [
+          "Drop a JPEG, PNG or WebP. Convert HEIC first.",
+          "Inspect GPS and camera tags in this tab.",
+          "Fast for typical JPEG. Deep for PNG/WebP or leftover packets.",
+          "Download, then re-drop the saved file. Empty GPS is the bar.",
+        ],
+      },
     ),
   component: HowToPage,
 });

@@ -11,6 +11,7 @@ export const Route = createFileRoute("/exif-gps")({
       "Inspect GPS and EXIF tags in a photo | Strip",
       "Read GPS IFD, DateTimeOriginal, camera make and other JPEG tags in this tab. Inspection does not strip. No upload.",
       "/exif-gps",
+      { appName: "Inspect GPS and EXIF" },
     ),
   component: ExifGpsPage,
 });

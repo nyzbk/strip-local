@@ -4,18 +4,7 @@ import { Article } from "@/components/site/Article";
 import { FaqSection } from "@/components/site/FaqSection";
 import { SoftAgencyCta } from "@/components/ads/SoftAgencyCta";
 import { marketplaceFaq } from "@/content/faq";
-import { BreadcrumbJsonLd, FaqJsonLdItems, HowToJsonLd } from "@/lib/seo";
 import { pageHead } from "@/lib/page-head";
-
-export const Route = createFileRoute("/marketplace")({
-  head: () =>
-    pageHead(
-      "Marketplace Listing CDN Is Not Your Disk File | Strip",
-      "The public thumbnail is their recode. Your Camera Roll, drafts and buyer-chat attaches can still carry GPS. House pixels stay. Strip the file you keep and the file you upload.",
-      "/marketplace",
-    ),
-  component: MarketplacePage,
-});
 
 const STEPS = [
   {
@@ -40,21 +29,25 @@ const STEPS = [
   },
 ];
 
+export const Route = createFileRoute("/marketplace")({
+  head: () =>
+    pageHead(
+      "Marketplace Listing CDN Is Not Your Disk File | Strip",
+      "The public thumbnail is their recode. Your Camera Roll, drafts and buyer-chat attaches can still carry GPS. House pixels stay. Strip the file you keep and the file you upload.",
+      "/marketplace",
+      {
+        appName: "Marketplace",
+        faqs: marketplaceFaq,
+        howToName: "Keep GPS off seller files when the listing CDN is already recoded",
+        howToSteps: STEPS.map((s) => `${s.name}. ${s.text}`),
+      },
+    ),
+  component: MarketplacePage,
+});
+
 function MarketplacePage() {
   return (
     <AppShell>
-      <BreadcrumbJsonLd
-        items={[
-          { name: "Strip", path: "/" },
-          { name: "Marketplace", path: "/marketplace" },
-        ]}
-      />
-      <HowToJsonLd
-        name="Keep GPS off seller files when the listing CDN is already recoded"
-        description="A clean thumbnail on a marketplace is their recode. Your disk and your buyer chat are separate objects. Strip those."
-        steps={STEPS}
-      />
-      <FaqJsonLdItems items={marketplaceFaq} />
       <Article
         title="Marketplace: the listing CDN is not your disk"
         lede="A public thumbnail with empty EXIF does not mean the JPEG on your phone is clean. Marketplaces recompress for the listing. Camera Roll, the draft, the extra angle you drop into chat with a buyer — those are other files. Strip those. The house in the picture is still the house."
