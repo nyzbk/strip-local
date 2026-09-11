@@ -15,6 +15,7 @@ const PATHS = [
   "/contact",
   "/privacy",
   "/terms",
+  "/llms.txt",
   "/about",
 ];
 

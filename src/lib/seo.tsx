@@ -10,10 +10,24 @@ export function JsonLd() {
     applicationCategory: "UtilitiesApplication",
     operatingSystem: "Any",
     offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+    isAccessibleForFree: true,
     description:
       "Remove EXIF, GPS, camera and software metadata from JPG, PNG and WebP in the browser. Batch, private, no watermark.",
   };
-  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(app) }} />;
+  const website = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "Strip",
+    url: SITE.origin,
+    inLanguage: "en",
+    publisher: { "@type": "Organization", name: SITE.publisher, email: SITE.email, url: SITE.origin },
+  };
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(website) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(app) }} />
+    </>
+  );
 }
 
 export function FaqJsonLd() {

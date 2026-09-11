@@ -1,0 +1,37 @@
+# Strip
+
+> Remove EXIF, GPS, camera and software metadata from JPG, PNG and WebP in the browser.
+
+The public origin is https://strip-local.vercel.app. Operated by Ultimatum. Contact ultaultimatum@gmail.com.
+
+## Tools
+
+* [Strip metadata](https://strip-local.vercel.app) — EXIF/GPS out in this tab.
+
+## Guides
+
+* [How to strip](https://strip-local.vercel.app/how-to) — Drop, strip, download.
+* [iPhone](https://strip-local.vercel.app/iphone) — Photos may rewrite GPS. Files holds the strip.
+* [WhatsApp](https://strip-local.vercel.app/whatsapp) — Chat recode vs document.
+* [Marketplace](https://strip-local.vercel.app/marketplace) — Listings leak GPS.
+* [What GPS leaks](https://strip-local.vercel.app/exif-gps) — The fields, not a lecture.
+* [Why local](https://strip-local.vercel.app/why-local) — Why a server strip is the wrong bargain.
+* [Use cases](https://strip-local.vercel.app/use-cases) — Before you post.
+* [FAQ](https://strip-local.vercel.app/faq) — Privacy.
+
+## Site pages
+
+* [About](https://strip-local.vercel.app/about) — Operator and what this tool refuses to be.
+* [Contact](https://strip-local.vercel.app/contact) — ultaultimatum@gmail.com
+* [Privacy](https://strip-local.vercel.app/privacy) — Bytes stay in the tab.
+* [Terms](https://strip-local.vercel.app/terms) — Not a studio, not a host.
+* [FAQ](https://strip-local.vercel.app/faq) — Short answers.
+
+## Site
+
+* [Sitemap](https://strip-local.vercel.app/sitemap.xml)
+* [llms.txt](https://strip-local.vercel.app/llms.txt) — This file.
+
+## Not on this origin
+
+* Bytes stay in the tab. There is no conversion API and no `/blogs/` cluster.
